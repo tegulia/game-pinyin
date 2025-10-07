@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #764ba2;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.game-area {
+    margin: 2rem 0;
+}
+
+.character-display {
+    margin-bottom: 2rem;
+}
+
+.character {
+    font-size: 6rem;
+    color: #764ba2;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hint {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.input-area {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#pinyin-input {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#pinyin-input:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+
+#submit-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.timer-display {
+    margin-bottom: 1.5rem;
+}
+
+.timer-display span {
+    font-size: 1.3rem;
+    color: #764ba2;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    background: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
+    transition: width 1s linear;
+    border-radius: 5px;
+}
+
+.feedback {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.correct {
+    color: #56ab2f;
+}
+
+.incorrect {
+    color: #e74c3c;
+}
+
+.controls {
+    margin-top: 2rem;
+}
+
+#start-btn, #restart-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#start-btn:hover, #restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(86, 171, 47, 0.4);
+}
+
+/* 大红花奖励动画 */
+.flower-reward {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.flower-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    animation: zoomIn 0.5s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.flower {
+    font-size: 8rem;
+    animation: rotate 2s linear infinite, pulse 1s ease-in-out infinite alternate;
+    margin-bottom: 1rem;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.congratulations {
+    font-size: 2.5rem;
+    color: #764ba2;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.final-score {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.author-intro {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 10px;
+    border: 2px dashed #ff69b4;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .character {
+        font-size: 4rem;
+    }
+
+    .input-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pinyin-input {
+        width: 80%;
+    }
+
+    .flower {
+        font-size: 6rem;
+    }
+}

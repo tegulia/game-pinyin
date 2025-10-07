@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儿童拼音打字游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>拼音打字游戏</h1>
+            <div class="score-board">
+                <span>得分: <span id="score">0</span></span>
+                <span>回合: <span id="round">1</span>/10</span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="character-display">
+                <div id="current-character" class="character">一</div>
+                <div id="character-hint" class="hint">请输入拼音</div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="pinyin-input" placeholder="输入拼音..." autocomplete="off">
+                <button id="submit-btn">提交</button>
+            </div>
+
+            <div class="timer-display">
+                <span>剩余时间: <span id="timer">20</span> 秒</span>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+        </main>
+
+        <div class="controls">
+            <button id="start-btn">开始游戏</button>
+            <button id="restart-btn" style="display: none;">重新开始</button>
+        </div>
+    </div>
+
+    <!-- 大红花奖励动画 -->
+    <div id="flower-reward" class="flower-reward" style="display: none;">
+        <div class="flower-container">
+            <div class="flower">🌸</div>
+            <div class="congratulations">恭喜！</div>
+            <div class="final-score">最终得分: <span id="final-score">0</span></div>
+            <div class="author-intro">
+                大家好，我是果果，来自上海，今年8岁了，这是我做的游戏，希望你们喜欢，如果你们有什么建议可以通过邮箱联系我(benjamin.fzeng@foxmail.com)，🐱喵喵喵～
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
