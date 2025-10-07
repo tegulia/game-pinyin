@@ -252,6 +252,20 @@ h1 {
     border: 2px dashed #ff69b4;
 }
 
+/* 二维码样式 */
+.qrcode-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.qrcode-image {
+    max-width: 200px;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* 响应式设计 */
 @media (max-width: 600px) {
     .game-container {
@@ -278,5 +292,9 @@ h1 {
 
     .flower {
         font-size: 6rem;
+    }
+
+    .qrcode-image {
+        max-width: 150px;
     }
 }
